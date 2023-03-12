@@ -4,6 +4,10 @@
   color: blue
 }
 
+html{
+  max-height: fit-content;
+}
+
 body{
   background-color: beige;
 }
@@ -61,16 +65,12 @@ label{
   width: 100%;
 }
 
-.accordeon-item:hover .accordeon_input[type=radio] ~ label .cross{
-  transform: rotate(0);
-}
-
-.accordeon-item:hover .accordeon_input[type=radio] ~ label .meme_img{
-  width: 100%;
-}
-
-.accordeon:hover *{
-  color: #000;;
+.accordeon-item:active .cross,
+.accordeon-item:active .meme_img,
+.accordeon-item:active .meme_name{
+  display: block;
+  color: blue !important;
+  opacity: 0.6 !important;
 }
 
 .meme_img{
@@ -78,7 +78,7 @@ label{
   max-width: 400px;
   margin: 20px auto 0;
   width: 0;
-  transition: 0.5s;
+  transition: 500ms;
 }
 
 .accordeon-item_header{
@@ -114,4 +114,19 @@ footer{
   .container{
     max-width: 80%;
   }
+}
+
+@media  (hover:hover){
+  .accordeon:hover *{
+    color: #000;
+  }
+
+.accordeon-item:hover .accordeon_input[type=radio] ~ label .cross{
+  transform: rotate(0);
+}
+
+.accordeon-item:hover .accordeon_input[type=radio] ~ label .meme_img{
+  width: 100%;
+}
+
 }
