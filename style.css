@@ -1,0 +1,148 @@
+*{
+  margin: 0;
+  padding: 0;
+  color: blue
+}
+
+html{
+  max-height: fit-content;
+}
+
+body{
+  background-color: beige;
+}
+
+.container{
+  max-width: 760px;
+  width: 100%;
+  padding: 30px 20px 0;
+  margin: auto;
+}
+
+h1{
+  font-size: 3rem;
+  color: black;
+}
+
+h2{
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.accordeon{
+  margin: 20px auto;
+  max-width: 800px;
+  cursor: pointer;
+}
+
+.accordeon-item{
+  border-bottom: 1px solid #00000044;
+  padding-bottom: 7px;
+  margin-top: 20px;
+}
+
+.accordeon-item:last-child{
+  border-bottom: 0;
+}
+
+.accordeon_input{
+  display: none;
+}
+
+label{
+  cursor: pointer;
+}
+
+.accordeon_input[type=radio]:checked ~ label .meme_name{
+  color: black;
+}
+
+.accordeon_input[type=radio]:checked ~ label .cross{
+  transform: rotate(0);
+}
+
+.accordeon_input[type=radio]:checked ~ label .meme_img{
+  width: 100%;
+}
+
+.accordeon-item:active .cross,
+.accordeon-item:active .meme_img,
+.accordeon-item:active .meme_name{
+  display: block;
+  color: blue !important;
+  opacity: 0.6 !important;
+}
+
+.meme_img{
+  display: block;
+  max-width: 400px;
+  margin: 20px auto 0;
+  width: 0;
+  transition: 500ms;
+}
+
+.accordeon-item_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cross{
+  width: 25px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: 200ms;
+}
+
+.accordeon:hover .cross{
+  opacity: 1;
+}
+
+footer{
+  width: fit-content;
+  margin: 100px auto;
+  color: black;
+  font-size: 1.5em;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 819px) {
+  .container{
+    max-width: 80%;
+  }
+
+  html{
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 820px) and (max-width: 1200px) {
+  html{
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (min-width: 1201px) {
+  html{
+    font-size: 1.4rem;
+  }
+}
+
+@media  (hover:hover){
+  .accordeon:hover *{
+    color: #000;
+  }
+
+.accordeon-item:hover .accordeon_input[type=radio] ~ label .cross{
+  transform: rotate(0);
+}
+
+.accordeon-item:hover .accordeon_input[type=radio] ~ label .meme_img{
+  width: 100%;
+}
+
+}
